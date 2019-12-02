@@ -26,12 +26,6 @@ nav>div>ul>li>a {
     font-size: large;
 }
 
-.background-img {
-    background-image: url("../Hackio/images/2006-03-30_-_Hands.0.0.jpg");
-    background-size: cover, contain;
-    background-repeat: no-repeat;
-}
-
 .titre {
     font-family: 'Oswald', sans-serif;
     font-size: 120px;
@@ -45,4 +39,16 @@ nav>div>ul>li>a {
     width: 100%;
     padding-left: 20px;
     padding-right: 20px;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.bottom-left {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
 }
