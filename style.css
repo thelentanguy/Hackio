@@ -15,6 +15,12 @@
     margin-bottom: 60px;
 }
 
+.soustitre {
+    font-family: 'Oswald', sans-serif;
+    font-size: 30px;
+    color: #EC0A08;
+}
+
 .body {
     background-color: #707070;
 }
@@ -66,7 +72,6 @@ nav>div>ul>li>a {
 }
 
 /*HOME*/
-
 .containerhome {
     background-image: url(../Hackio/images/2006-03-30_-_Hands.0.0.jpg);
     background-size: cover ;
@@ -74,8 +79,8 @@ nav>div>ul>li>a {
     height: 100%;
 }
 
+/*PRESENTATION*/
 /*FAQ*/
-
 .faqsections {
     background-color: #707070;
     color:white !important;
@@ -90,4 +95,10 @@ nav>div>ul>li>a {
     font-family: 'Oswald', sans-serif;
     font-size: large;
     justify-content: flex-start;
+}
+
+/*FOOTER*/
+.logo2 {
+    width: 200px;
+    height: 100px;
 }
