@@ -1,10 +1,34 @@
+/*ALL*/
+.txt {
+    color:white !important;
+    font-family: 'Oswald', sans-serif;
+    font-size: large;
+    justify-content: flex-start;
+}
+
+.titre {
+    font-family: 'Oswald', sans-serif;
+    font-size: 120px;
+    color: white;
+    margin-left:40px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.body {
+    background-color: #707070;
+}
+
+/*NAVBAR*/
 .logo {
     width: 100px;
     height: 50px;
 }
+
 .mynavbar-bg {
     background-color: #5E5E5E;
 }
+
 nav>div>ul>li>a {
     color:white !important;
     font-family: 'Oswald', sans-serif;
@@ -16,14 +40,17 @@ nav>div>ul>li>a {
     text-decoration: underline;
     text-decoration-color:#EC0A08;
 }
+
 .myburger {
     color: white;
 }
+
 .btncolor {
     background-color: #EC0A08;
     color: white;
     font-family: 'Oswald', sans-serif;
 }
+
 .btncolor:hover {
     background-color:white;
     color:#EC0A08;
@@ -31,14 +58,6 @@ nav>div>ul>li>a {
     font-size: large;
 }
 
-.titre {
-    font-family: 'Oswald', sans-serif;
-    font-size: 120px;
-    color: white;
-    margin-left:40px;
-    margin-top: 60px;
-    margin-bottom: 60px;
-}
 .navbar-nav {
     justify-content: space-between;
     width: 100%;
@@ -46,13 +65,29 @@ nav>div>ul>li>a {
     padding-right: 20px;
 }
 
-.body {
-    background-color: #707070;
-}
+/*HOME*/
 
-.container {
+.containerhome {
     background-image: url(../Hackio/images/2006-03-30_-_Hands.0.0.jpg);
     background-size: cover ;
     width: 100%;
     height: 100%;
+}
+
+/*FAQ*/
+
+.faqsections {
+    background-color: #707070;
+    color:white !important;
+    font-family: 'Oswald', sans-serif;
+    font-size: large;
+    justify-content: flex-start;
+}
+
+.faqsousections {
+    background-color: #333333;
+    color:white !important;
+    font-family: 'Oswald', sans-serif;
+    font-size: large;
+    justify-content: flex-start;
 }
