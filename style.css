@@ -65,7 +65,7 @@ nav>div>ul>li>a {
 }
 
 .navbar-nav {
-    justify-content: space-between;
+    justify-content: space-around;
     width: 100%;
     padding-left: 20px;
     padding-right: 20px;
@@ -74,13 +74,14 @@ nav>div>ul>li>a {
 /*HOME*/
 .containerhome {
     background-image: url(../Hackio/images/2006-03-30_-_Hands.0.0.jpg);
-    background-size: cover ;
+    background-size: cover;
     width: 100%;
     height: 100%;
-
 }
 
 /*PRESENTATION*/
+/*ÉCRANS*/
+/*FONCTIONNALITÉ*/
 /*FAQ*/
 .faqsections {
     background-color: #707070;
@@ -97,7 +98,7 @@ nav>div>ul>li>a {
     font-size: large;
     justify-content: flex-start;
 }
-
+/*ÉQUIPE*/
 /*FOOTER*/
 .logo2 {
     width: 200px;
