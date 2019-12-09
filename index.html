@@ -13,11 +13,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <title>Hackio</title>
 </head>
 <body class="body">
+
 <!--NAV BAR-->
     <nav class="navbar navbar-expand-lg navbar-light mynavbar-bg sticky-top">
       <img src="images/Logogo.png" class="logo" alt="Responsive image">
@@ -49,9 +51,10 @@
           <button class="btn  btncolor:hover btncolor" href="#">Télécharger</button>
         </div>
     </nav>
+
 <!--HOME-->
 <div class="containerhome">
-  <h1 class="titre Responsive"> Hackio, <br> Un médecin toujours <br> à porté de main</h1>
+  <h1 class="titre"> Hackio, <br> Un médecin toujours <br> à porté de main</h1>
 </div>
 
 <br><br><br><br><br><br><br><br><br><br>
@@ -59,13 +62,13 @@
 <!--PRESENTATION-->
 <div class="container">
   <div class="row">
-    <div class="col-6">
+    <div class="col-12 col-md ">
       <p class="soustitre">Présentation du projet</p>
       <br>
       <p class="txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vitae tellus congue, interdum lorem sed, luctus diam. Aliquam aliquet, nisl sit amet vulputate egestas, lorem mi dictum nulla, vel viverra risus risus id nulla. Duis elementum, dolor consectetur tempor pulvinar, libero purus iaculis nulla, ac fermentum justo quam sed odio. </p>
     </div>
 
-    <div class="col-6">
+    <div class="col-12 col-md">
         <p class="soustitre">Technologie RFID</p>
         <br>
         <p class="txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vitae tellus congue, interdum lorem sed, luctus diam. Aliquam aliquet, nisl sit amet vulputate egestas, lorem mi dictum nulla, vel viverra risus risus id nulla. Duis elementum, dolor consectetur tempor pulvinar, libero purus iaculis nulla, ac fermentum justo quam sed odio. </p>
@@ -73,36 +76,47 @@
   </div>
 </div>
 <br><br><br><br><br><br><br><br><br><br>
-
+<!--ÉCRANS-->
 <!--FONCTIONNALITES-->
-<div class="container">
-  <div class="row">
-    <div class="col-6">
-      <p class="soustitre text-center">Coeur</p>
-      <br>
-      <p class="txt text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </div>
-    <div class="col-6">
-      <p class="soustitre text-center">Conseils nutritions</p>
-      <br>
-      <p class="txt text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<div class="container-fluid fonctionnaliteesbkn">
+  <div class="container">
+     <div class="row">
+      <div class="col-12 col-md">
+       <p class="soustitre text-center">Coeur</p>
+       <br>
+       <img class="icon rounded mx-auto d-block" src="images/coeur.svg">
+       <br>
+       <p class="txt text-center">Votre rythme cardiaque est constamment enrgistré dans l’application pour que vous puissiez consulter le comportement de votre coeur au fil de la journée. </p>
+      </div>
+      <div class="col-12 col-md">
+       <p class="soustitre text-center">Conseils nutritions</p>
+       <br>
+       <img class="icon rounded mx-auto d-block" src="images/nutri.svg">
+       <br>
+       <p class="txt text-center">Grâce à votre puce RFID, Hackio vous informe sur vos carences et vous donne des conseils personnalisés pour y remédier</p>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-6">
-     <p class="soustitre text-center">Cycle menstruel</p>
-     <br>
-     <p class="txt text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </div>
-    <div class="col-6">
-      <p class="soustitre text-center">Sommeil</p>
-      <br>
-      <p class="txt text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md">
+       <p class="soustitre text-center">Cycle menstruel</p>
+       <br>
+       <img class="icon rounded mx-auto d-block" src="images/calendrier.svg">
+       <br>
+       <p class="txt text-center">Le suivi de votre cycle menstruel peut vous aider à avoir une meilleure compréhension de votre santé globale </p>
+      </div>
+      <div class="col-12 col-md">
+        <p class="soustitre text-center">Sommeil</p>
+        <br>
+        <img class="icon rounded mx-auto d-block" src="images/sommeil.svg">
+        <br>
+        <p class="txt text-center">Votre application enregistre vos cycles de sommeils et vous conseille l’heure adéquate pour bénéficier d’un sommeil optimal</p>
+      </div>
     </div>
   </div>
+
 </div>
 
 <br><br><br><br><br><br><br><br><br><br>
@@ -110,7 +124,7 @@
 <!--FAQ-->
 <div class="container">
   <div class="row">
-    <div class="col-6">
+    <div class="col-12 col-md">
       <div class="accordion" id="accordionExample">
 
       <div class="card faqsections border-light">
@@ -123,7 +137,7 @@
         </div>
         <div id="collapseOne" class="collapse show faqsousections" aria-labelledby="headingOne" data-parent="#accordionExample">
           <div class="card-body">
-             <h1 class="txt">Si vous rencontrez un problème d’apparaige entre votre puce RFID et l’application, essayez premièrement de redémarrer votre puce RFID en appuyant 3 fois sur votre paume, deuxièmement rétablir la connexion entre l’application entre votre appareil et votre puce RFID           </div>
+            <h1 class="txt">Si vous rencontrez un problème d’apparaige entre votre puce RFID et l’application, essayez premièrement de redémarrer votre puce RFID en appuyant 3 fois sur votre paume, deuxièmement rétablir la connexion entre l’application entre votre appareil et votre puce RFID </h1>
           </div>
         </div>
       </div>
@@ -188,31 +202,55 @@
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="col-6">
-      <img src="images/petition-img-31184-fr.jpeg" alt="Responsive image">
+    <div class="col-12 col-md">
+      <img class="imgresponsive" src="images/petition-img-31184-fr.jpeg" alt="Responsive image">
     </div>
-    
+
   </div>
 </div>
 
 
 <br><br><br><br><br><br><br><br><br><br>
+<!--Équipe-->
+<div class="container-fluid equipebkn">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md">
+        <p class="soustitre">Nicolas</p>
+      </div> 
+      <div class="col-12 col-md">
+        <p class="soustitre">Tanguy</p>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!--Footer-->
 <footer>
   <div class="container">
     <div class="row">
-      <div class="col-6">
+
+      <div class="col-12 col-md">
         <img src="images/Logogo.png" class="logo2" alt="Responsive image">
       </div>
-      <div class="col-6">
-         <p class="txt">Av. De Mai 218</p>
-         <p class="txt">1200 Bruxelles , Belgique</p>
-         <p class="txt">contact@hackio.be</p>
-         <p class="txt">+32 91 36 42 91</p>
-         <p class="txt">© Hackio 2019</p>
+
+      <div class="col-12 col-md">
+         <p class="txt">facebook</p>
+         <p class="txt">twitter</p>
+         <p class="txt">instagram</p>
+         <a class="txt" href="mentionslegales.html"> Mentions Légales </a>
       </div>
+
+      <div class="col-12 col-md">
+          <p class="txt">Av. De Mai 218</p>
+          <p class="txt">1200 Bruxelles , Belgique</p>
+          <p class="txt">contact@hackio.be</p>
+          <p class="txt">+32 91 36 42 91</p>
+          <p class="txt">© Hackio 2019</p>
+       </div>
+
     </div>
   </div>
 </footer>

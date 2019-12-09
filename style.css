@@ -1,4 +1,10 @@
 /*ALL*/
+.imgresponsive {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
 .txt {
     color:white !important;
     font-family: 'Oswald', sans-serif;
@@ -22,7 +28,7 @@
 }
 
 .body {
-    background-color: #707070;
+    background-color: #333333;
 }
 
 /*NAVBAR*/
@@ -73,15 +79,26 @@ nav>div>ul>li>a {
 
 /*HOME*/
 .containerhome {
-    background-image: url(../Hackio/images/2006-03-30_-_Hands.0.0.jpg);
+    background-image: url(../Hackio/images/clafoutis.jpg);
     background-size: cover;
-    width: 100%;
-    height: 100%;
+    height: 100vh;
+    padding:1px 0;
+    
 }
 
 /*PRESENTATION*/
 /*ÉCRANS*/
 /*FONCTIONNALITÉ*/
+.fonctionnaliteesbkn{
+    background-color: #9D9D9D;
+    height: 600px;
+}
+
+.icon {
+    width: 100px;
+    height: 100px;
+}
+
 /*FAQ*/
 .faqsections {
     background-color: #707070;
@@ -98,7 +115,18 @@ nav>div>ul>li>a {
     font-size: large;
     justify-content: flex-start;
 }
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .titre{
+      font-size: 65px;
+    }
+  }
+
 /*ÉQUIPE*/
+.equipebkn{
+    background-color: #9D9D9D;
+    height: 600px;
+}
 /*FOOTER*/
 .logo2 {
     width: 200px;
