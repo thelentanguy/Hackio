@@ -100,6 +100,10 @@ nav>div>ul>li>a {
 }
 
 /*FAQ*/
+
+.btn-link:hover {
+    text-decoration: none;
+}
 .faqsections {
     background-color: #707070;
     color:white !important;
@@ -127,6 +131,12 @@ nav>div>ul>li>a {
     background-color: #9D9D9D;
     height: 600px;
 }
+
+.imgequipe {
+    width: 200px;
+    height: 200px;
+}
+
 /*FOOTER*/
 .logo2 {
     width: 200px;
