@@ -87,6 +87,15 @@ nav>div>ul>li>a {
 }
 
 /*PRESENTATION*/
+.containerpres{
+    background-image: url(../Hackio/images/Sans\ titre\ -\ 2.svg);
+    background-size: auto;
+    height: 100vh;
+    padding:1px 0;
+    margin-left: 70px;
+    
+}
+
 /*ÉCRANS*/
 /*FONCTIONNALITÉ*/
 .fonctionnaliteesbkn{
@@ -138,6 +147,23 @@ nav>div>ul>li>a {
 }
 
 /*FOOTER*/
+.flexicon {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: stretch;
+}
+
+.flexml {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-end;
+    align-content: stretch;
+}
 .logo2 {
     width: 200px;
     height: 100px;
