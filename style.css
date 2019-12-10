@@ -79,7 +79,7 @@ nav>div>ul>li>a {
 
 /*HOME*/
 .containerhome {
-    background-image: url(../Hackio/images/clafoutis.jpg);
+    background-image: url(images/clafoutis.jpg);
     background-size: cover;
     height: 100vh;
     padding:1px 0;
@@ -91,7 +91,7 @@ nav>div>ul>li>a {
 
 /*PRESENTATION*/
 .containerpres{
-    background-image: url(../Hackio/images/Sans\ titre\ -\ 2.svg);
+    background-image: url(images/Sans\ titre\ -\ 2.svg);
     background-size: auto;
     height: 100vh;
     padding:1px 0;
@@ -153,6 +153,17 @@ nav>div>ul>li>a {
 }
 
 /*FOOTER*/
+
+.footer {
+
+}
+
+.footer_column {
+    display:flex;
+    justify-content:center; 
+    align-items: center;
+}
+
 .flexicon {
     display: flex;
     flex-direction: row;
