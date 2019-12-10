@@ -85,6 +85,10 @@ nav>div>ul>li>a {
     padding:1px 0;
 }
 
+.paddintitre {
+    padding-top: 150px;
+}
+
 /*PRESENTATION*/
 .containerpres{
     background-image: url(../Hackio/images/Sans\ titre\ -\ 2.svg);
