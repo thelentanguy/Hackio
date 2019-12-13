@@ -31,6 +31,17 @@
     background-color: #333333;
 }
 
+.titresection{
+    font-family: 'Oswald', sans-serif;
+    font-size: 60px;
+    color: white;
+}
+
+.sizeicon{
+    height: 10px;
+    width: 10px;
+}
+
 /*NAVBAR*/
 .logo {
     width: 100px;
