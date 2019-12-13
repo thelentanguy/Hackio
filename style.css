@@ -93,10 +93,7 @@ nav>div>ul>li>a {
     background-image: url(images/Sans\ titre\ -\ 2.svg);
     background-size: auto;
     background-repeat: no-repeat;
-    height: 100vh;
     padding:1px 0;
-    margin-left: 20px;
-    margin-right: 20px;
 }
 
 .marginpres{
@@ -110,10 +107,14 @@ nav>div>ul>li>a {
   }
 
 /*ÉCRANS*/
-body{
-    background:#ccc;
-  }
+.containerecrans{
+    min-height: 600px;
+}
 
+.imgslider {
+    width: 100%;
+    height: auto;
+}
 
 /*FONCTIONNALITÉ*/
 .fonctionnaliteesbkn{
@@ -235,3 +236,6 @@ body{
       padding-top: 50px;
     }
 }
+
+/*Mentionslégales*/
+
