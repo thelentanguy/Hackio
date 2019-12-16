@@ -61,16 +61,18 @@
 </div>
 
 <!--PRESENTATION-->
+<section class="min-vh-100 d-flex align-items-center px-5">
+
 <div class="containerpres">
 
-<div class="goute">
-    <img class="sizeicon" src="images/Projet.svg">
-  <p class="titresection text-center">Projet</p>
-</div>
+    <div class="goute">
+        <img class="sizeicon" src="images/Projet.svg">
+      <p class="titresection text-center">Projet</p>
+    </div>
 
-<section class="min-vh-100 d-flex align-items-center px-5">
+
   
-  <div class="row">
+  <div class="row paddingpres">
     <div class="col-md-6">
       <p class="soustitre">Présentation du projet</p>
       <br>
@@ -89,12 +91,12 @@
 <!--ÉCRANS-->
 <section class="w-100 min-vh-100 px-5">
 
-    <div class="goute">
+    <div class="goute paddingecrans">
         <img class="sizeicon" src="images/ecrans.svg">
       <p class="titresection text-center">Écrans</p>
     </div>
 
-  <div class="row">
+  <div class="row paddingecrans">
     <div class="col-md-6">
       <div class="slider">
         <div>
@@ -119,7 +121,7 @@
     </div>
 
     <div class="col-md-6">
-        <p class="txt text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vitae tellus congue, interdum lorem sed, luctus diam. Aliquam aliquet, nisl sit amet vulputate egestas, lorem mi dictum nulla, vel viverra risus risus id nulla. Duis elementum, dolor consectetur tempor pulvinar, libero purus iaculis nulla, ac fermentum justo quam sed odio. </p>
+        <p class="txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vitae tellus congue, interdum lorem sed, luctus diam. Aliquam aliquet, nisl sit amet vulputate egestas, lorem mi dictum nulla, vel viverra risus risus id nulla. Duis elementum, dolor consectetur tempor pulvinar, libero purus iaculis nulla, ac fermentum justo quam sed odio. </p>
     </div>
   </div>
 
@@ -144,7 +146,7 @@
        <br>
        <p class="txt text-center">Votre rythme cardiaque est constamment enrgistré dans l’application pour que vous puissiez consulter le comportement de votre coeur au fil de la journée. </p>
       </div>
-      <div class="col-md">
+      <div class="col-md-6">
        <p class="soustitre text-center">Conseils nutritions</p>
        <br>
        <img class="icon rounded mx-auto d-block" src="images/nutri.svg">
@@ -184,7 +186,7 @@
     </div>
 
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-6 paddingfaq2">
       <div class="accordion" id="accordionExample">
 
       <div class="card faqsections border-light">
@@ -255,7 +257,7 @@
   </div>
 
     <div class="col-md-6 paddingfaq">
-      <img class="img-fluid" src="images/petition-img-31184-fr.jpeg" alt="Responsive image">
+      <img class="img-fluid" src="images/photo_faq.jpg" alt="Responsive image">
     </div>
 
   </div>
@@ -272,12 +274,12 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-md">
-        <p class="soustitre">Nicolas</p>
+        <p class="soustitre marginnico">Nicolas</p>
         <img class="imgequipe mx-auto d-block" src="images/nicolo.png">
       </div>
 
       <div class="col-md-6 paddingphotoequipe">
-          <img class="imgequipe mx-auto d-block" src="images/Quali1.svg">
+          <img class="imgequipe mr-auto d-block" src="images/Quali1.1.svg">
       </div>
 
       <div class="col-md">
@@ -295,12 +297,12 @@
         </div>
 
         <div class="col-md paddingphotoequipe order-2">
-            <img class="imgequipe mx-auto d-block" src="images/Quali2.svg">
+            <img class="imgequipe ml-auto d-block" src="images/quali2.2.svg">
         </div>
   
         <div class="col-md order-1 order-md-3">
-            <p class="soustitre">Tanguy</p>
-            <img class="imgequipe mx-auto d-block" src="images/tanguyte.png">
+            <p class="soustitre margintang">Tanguy</p>
+            <img  class="imgequipe mx-auto d-block" src="images/tanguyte.png">
         </div>
       </div> 
     </div>
@@ -309,13 +311,13 @@
 <!--Footer-->
 <footer class="footer paddingfooter">
   <div class="container-fluid">
-    <div class="row">
+    <div class="row flexfooter">
 
-      <div class="col-md-6 footer_column">
+      <div class="col-md-4 footer_column">
         <img src="images/Logogo.png" class="logo2" alt="Responsive image">
       </div>
 
-      <div class="col-md-6 footer_column flexml">
+      <div class="col-md-4 footer_column flexml">
           <ul class="flexicon list-unstyled">
             <li>
               <img class="icon rounded mx-auto d-block" src="images/face.svg">
@@ -331,7 +333,12 @@
             <a class="txt text-center" href="mentionslegales.html"> Mentions Légales </a>
       </div>
 
-      <div class="col-md-6 footer_column paddingfooter">
+      <div class="col-md-4 footer_column paddingfooter">
+        <div>
+            <img class="icon rounded mx-auto d-block sizeicones" src="images/gps.svg">
+            <img class="icon rounded mx-auto d-block sizeicones" src="images/mail.svg">
+            <img class="icon rounded mx-auto d-block sizeicones" src="images/tel.svg">
+        </div>
         <div>
           <p class="txt">Av. De Mai 218</p>
           <p class="txt">1200 Bruxelles , Belgique</p>
@@ -339,7 +346,7 @@
           <p class="txt">+32 91 36 42 91</p>
           <p class="txt">© Hackio 2019</p>
         </div>
-       </div>
+      </div>
 
     </div>
   </div>
