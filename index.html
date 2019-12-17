@@ -33,35 +33,39 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active navelement">
-              <a class="nav-link" href="#">Accueil </a>
+              <a class="nav-link" href="#sectionhome">Accueil </a>
             </li>
             <li class="nav-item navelement">
-              <a class="nav-link" href="#">Présentation</a>
+              <a class="nav-link" href="#sectionprojet">Projet</a>
             </li>
             <li class="nav-item navelement">
-              <a class="nav-link" href="#">Écrans</a>
+              <a class="nav-link" href="#sectionecrans">Écrans</a>
             </li>
             <li class="nav-item navelement">
-              <a class="nav-link" href="#functions">Fonctionnalitées </a>
+              <a class="nav-link" href="#sectionfunctions">Fonctionnalitées </a>
             </li>
             <li class="nav-item navelement">
-              <a class="nav-link" href="#">FAQ</a>
+              <a class="nav-link" href="#sectionfaq">FAQ</a>
             </li>
             <li class="nav-item navelement">
-             <a class="nav-link" href="#">Équipe</a>
+             <a class="nav-link" href="#sectionequipe">Équipe</a>
             </li>
           </ul>
-          <button class="btn  btncolor:hover btncolor" href="#">Télécharger</button>
+          <button class="btn  btncolor:hover btncolor" href="#sectionecrans">Télécharger</button>
         </div>
     </nav>
 
 <!--HOME-->
-<div class="containerhome container-fluid">
-  <h1 class="titre paddingtitre"> Hackio, <br> Un médecin toujours <br> à porté de main</h1>
-</div>
+<section class="w-100 min-vh-100" id="sectionhome">
+
+    <div class="containerhome container-fluid"id="sectionhome">
+        <h1 class="titre paddingtitre"> Hackio, <br> Un médecin toujours <br> à porté de main</h1>
+    </div>
+
+</section>
 
 <!--PRESENTATION-->
-<section class="min-vh-100 d-flex align-items-center px-5">
+<section class="min-vh-100 d-flex align-items-center px-5" id="sectionprojet">
 
 <div class="containerpres">
 
@@ -89,7 +93,7 @@
 </section>
 
 <!--ÉCRANS-->
-<section class="w-100 min-vh-100 px-5">
+<section class="w-100 min-vh-100 px-5" id="sectionecrans">
 
     <div class="goute paddingecrans">
         <img class="sizeicon" src="images/ecrans.svg">
@@ -120,8 +124,14 @@
       </div>
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-6 paddingtxtfaq">
         <p class="txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vitae tellus congue, interdum lorem sed, luctus diam. Aliquam aliquet, nisl sit amet vulputate egestas, lorem mi dictum nulla, vel viverra risus risus id nulla. Duis elementum, dolor consectetur tempor pulvinar, libero purus iaculis nulla, ac fermentum justo quam sed odio. </p>
+
+      <div class="btndonlowd">
+        <img class="sizedonlowdbtn" src="images/AppStore-FR.png">
+        <img class="sizedonlowdbtn" src="images/GooglePlay-FR.png">
+      </div>
+
     </div>
   </div>
 
@@ -130,7 +140,9 @@
 </div>
 
 <!--FONCTIONNALITES-->
-<div class="container-fluid fonctionnaliteesbkn" id="#functions">
+<section class="w-100 min-vh-100" id="sectionfunctions">
+
+<div class="container-fluid fonctionnaliteesbkn">
 
     <div class="goute">
         <img class="sizeicon" src="images/Fonction.svg">
@@ -141,16 +153,16 @@
      <div class="row">
       <div class="col-md-6">
        <p class="soustitre text-center">Coeur</p>
-       <br>
+
        <img class="icon rounded mx-auto d-block" src="images/coeur.svg">
-       <br>
+       
        <p class="txt text-center">Votre rythme cardiaque est constamment enrgistré dans l’application pour que vous puissiez consulter le comportement de votre coeur au fil de la journée. </p>
       </div>
       <div class="col-md-6">
        <p class="soustitre text-center">Conseils nutritions</p>
-       <br>
+      
        <img class="icon rounded mx-auto d-block" src="images/nutri.svg">
-       <br>
+      
        <p class="txt text-center">Grâce à votre puce RFID, Hackio vous informe sur vos carences et vous donne des conseils personnalisés pour y remédier</p>
       </div>
     </div>
@@ -160,16 +172,16 @@
     <div class="row">
       <div class="col-md-6">
        <p class="soustitre text-center">Cycle menstruel</p>
-       <br>
+      
        <img class="icon rounded mx-auto d-block" src="images/calendrier.svg">
-       <br>
+     
        <p class="txt text-center">Le suivi de votre cycle menstruel peut vous aider à avoir une meilleure compréhension de votre santé globale </p>
       </div>
       <div class="col-md-6">
         <p class="soustitre text-center">Sommeil</p>
-        <br>
+     
         <img class="icon rounded mx-auto d-block" src="images/sommeil.svg">
-        <br>
+     
         <p class="txt text-center">Votre application enregistre vos cycles de sommeils et vous conseille l’heure adéquate pour bénéficier d’un sommeil optimal</p>
       </div>
     </div>
@@ -177,8 +189,11 @@
 
 </div>
 
+</section>
+
 <!--FAQ-->
-<div class="container-fluid paddingfaq">
+<section class="w-100 min-vh-100" id="sectionfaq">
+<div class="container-fluid paddingfaq" id="sectionfaq">
 
     <div class="goute">
         <img class="sizeicon" src="images/faq.svg">
@@ -263,7 +278,11 @@
   </div>
 </div>
 
+</section>
+
 <!--Équipe-->
+<section class="w-100 min-vh-100" id="sectionequipe">
+
 <div class="container-fluid equipebkn paddingequipe">
 
     <div class="goute">
@@ -307,6 +326,8 @@
       </div> 
     </div>
   </div>
+
+</section>
 
 <!--Footer-->
 <footer class="footer paddingfooter">
