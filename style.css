@@ -1,4 +1,7 @@
 /*ALL*/
+html{
+    scroll-behavior: smooth;
+}
 .imgresponsive {
     object-fit: cover;
     width: 100%;
@@ -123,7 +126,7 @@ nav>div>ul>li>a {
     background-image: url(images/Sans\ titre\ -\ 2.svg);
     background-size: auto;
     background-repeat: no-repeat;
-    padding:1px 0;
+    padding:200px 0;
 }
 
 .marginpres{
@@ -137,6 +140,11 @@ nav>div>ul>li>a {
   }
 
 /*ÉCRANS*/
+.sizedonlowdbtn{
+    height: 50px;
+    width:200px;
+}
+
 .containerecrans{
     min-height: 600px;
 }
@@ -148,6 +156,19 @@ nav>div>ul>li>a {
 
 .paddingecrans{
     padding-top: 100px ;
+}
+
+.btndonlowd{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: flex-end;
+    align-content: stretch;
+}
+
+.paddingtxtfaq{
+    padding-top: 100px;
 }
 
 /*FONCTIONNALITÉ*/
@@ -193,7 +214,7 @@ nav>div>ul>li>a {
     }
   }
 
-  .titrefaq {
+.titrefaq {
     font-family: 'Oswald', sans-serif;
     font-size: larger;
     color: white;
