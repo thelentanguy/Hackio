@@ -141,8 +141,8 @@ nav>div>ul>li>a {
 
 /*ÉCRANS*/
 .sizedonlowdbtn{
-    height: 50px;
-    width:200px;
+    height: 10Opx;
+    width: 200px;
 }
 
 .containerecrans{
@@ -168,7 +168,7 @@ nav>div>ul>li>a {
 }
 
 .paddingtxtfaq{
-    padding-top: 100px;
+    padding-top: 150px;
 }
 
 /*FONCTIONNALITÉ*/
@@ -328,6 +328,10 @@ nav>div>ul>li>a {
 
 .paddingiconegps{
     padding-top: 30px;
+}
+
+.paddingiconefooter{
+    padding-right: 25px;
 }
 
 /*Mentionslégales*/
