@@ -171,6 +171,12 @@ nav>div>ul>li>a {
     padding-top: 150px;
 }
 
+@media (min-width: 320px) and (max-width: 480px) {
+    .sizedonlowdbtn{
+        height: 50px;
+        width: 100px;
+    }
+  }
 /*FONCTIONNALITÉ*/
 .fonctionnaliteesbkn{
     background-size: cover;

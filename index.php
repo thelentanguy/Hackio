@@ -58,9 +58,8 @@
     </nav>
 
 <!------------------------------------------------------------------HOME------------------------------------------------------------------>
+<!--LOOP-PHRASE_D'ACROCHE-->
 <?php
-      // On récupère la "page" ayant "homepage" comme slug.
-      // Docs: https://developer.wordpress.org/reference/classes/wp_query/
 	    $params = array('pagename' => 'hackio-un-medecin-toujours-a-porte-de-main');
 	    $the_query = new WP_Query($params);
 	    if ( $the_query->have_posts() ) :
@@ -78,16 +77,16 @@
 <?php
 		    endwhile;
 	    endif; ?>
-
-<!------------------------------------------------------------------PRESENTATION------------------------------------------------------------------>
+<!--FIN-LOOP-PHRASE_D'ACROCHE-->
+<!------------------------------------------------------------------PRESENTATION----------------------------------------------------------------->
+<section class="min-vh-100 d-flex align-items-center px-5" id="sectionprojet">
+<!--LOOP-TITRE_PROJET-->
 <?php
       $params = array('pagename' => 'projet');
       $the_query = new WP_Query($params);
       if ( $the_query->have_posts() ) :
         while ( $the_query->have_posts() ) :
           $the_query->the_post(); ?>
-          
-<section class="min-vh-100 d-flex align-items-center px-5" id="sectionprojet">
 
 <div class="containerpres">
 
@@ -96,11 +95,11 @@
       <p class="titresection text-center"><?php the_title()?></p>
     </div>
 
-
 <?php
     endwhile;
   endif; ?>
-
+<!--FIN-LOOP-TITRE_PROJET-->
+<!--LOOP-PRESENTATION_DU_PROJET-->
 <?php
       $params = array('pagename' => 'presentation-du-projet');
       $the_query = new WP_Query($params);
@@ -114,11 +113,12 @@
       <br>
       <p class="txt"><?php the_content() ?> </p>
     </div>
+
 <?php
     endwhile;
   endif; ?>
-
-
+<!--FIN-LOOP-PRESENTATION_DU_PROJET-->
+<!--LOOP-TECHNOLOGIE_RFID-->
 <?php
       $params = array('pagename' => 'technologie-rfid');
       $the_query = new WP_Query($params);
@@ -133,25 +133,30 @@
     </div>
   </div>
 
-</section>
 <?php
     endwhile;
   endif; ?>
-
+<!--FIN-LOOP-TECHNOLOGIE_RFID-->
+</section>
 <!------------------------------------------------------------------ÉCRANS------------------------------------------------------------------>
+<section class="w-100 min-vh-100 px-5" id="sectionecrans">
+<!--LOOP-TITRE_ECRANS-->
 <?php
       $params = array('pagename' => 'ecrans');
       $the_query = new WP_Query($params);
       if ( $the_query->have_posts() ) :
         while ( $the_query->have_posts() ) :
           $the_query->the_post(); ?>
-<section class="w-100 min-vh-100 px-5" id="sectionecrans">
 
     <div class="goute paddingecrans">
         <img class="sizeicon" src="<?= get_template_directory_uri () ?>/images/ecrans.svg">
       <p class="titresection text-center"><?php the_title()?></p>
     </div>
 
+    <?php
+    endwhile;
+  endif; ?>
+<!--FIN-LOOP-TITRE_ECRANS-->
   <div class="row paddingecrans">
     <div class="col-md-6">
       <div class="slider">
@@ -187,41 +192,22 @@
   </div>
 
 </section>
-
-</div>
-
-<?php
-    endwhile;
-  endif; ?>
-
-<!------------------------------------------------------------------FONCTIONNALITES------------------------------------------------------------------>
-<!--TEST BOUCLE PHP ARTICLES WP-->
+<!------------------------------------------------------------------FONCTIONNALITES-------------------------------------------------------------->
+<section class="w-100 min-vh-100" id="sectionfunctions">
 <div class="container-fluid fonctionnaliteesbkn">
-<?php
-// Ce template va lister TOUS les articles liés à la catégorie dont le slug est "news".
-?>
-
+<!--TEST_BOUCLE_ARTICLES-->
 <main role="main">
+
 	<section class="py-5 bg-light">
-
-<!--Afficher titre page-->
-<?php
-      $params = array('pagename' => 'fonctionnalitees');
-      $the_query = new WP_Query($params);
-      if ( $the_query->have_posts() ) :
-        while ( $the_query->have_posts() ) :
-          $the_query->the_post(); ?>
-
-  <div class="goute">
-        <img class="sizeicon" src="<?= get_template_directory_uri () ?>/images/Fonction.svg">
-      <p class="titresection text-center"><?php the_title()?></p>
-  </div>
-
-  <?php
-    endwhile;
-  endif; ?>
-<!--Fin Afficher titre page-->
-
+		<div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+			<h1 class="display-4">
+				<?php
+				// On affiche le titre de la catégorie.
+				// Docs: https://developer.wordpress.org/reference/functions/single_cat_title/
+				echo single_cat_title() ?>
+			</h1>
+      <h3>(category.php : template générique listant TOUS les articles liés à une catégorie donnée)</h3>
+		</div>
 		<div class="container">
 			<div class="row">
 
@@ -232,13 +218,13 @@
 						?>
 						<div class="col-md-4">
 							<div class="card mb-4 shadow-sm">
-                <?php
-                // Si l'article à une image "mise en avant", on l'affiche.
-                if(get_the_post_thumbnail_url()): ?>
-                  <a href="<?php the_permalink(); ?>">
-                    <img class="card-img-top" src="<?php the_post_thumbnail_url() ?>" alt="Card image cap">
-                  </a>
-                <?php endif; ?>
+								<?php
+								// Si l'article à une image "mise en avant", on l'affiche.
+								if(get_the_post_thumbnail_url()): ?>
+									<a href="<?php the_permalink(); ?>">
+										<img class="card-img-top" src="<?php the_post_thumbnail_url() ?>" alt="Card image cap">
+									</a>
+								<?php endif; ?>
 								<div class="card-body">
 									<p class="card-text">
 										<a href="<?php the_permalink() ; ?>">
@@ -260,70 +246,114 @@
 	</section>
 
 </main>
-
-</div>
-<!--FIN TEST BOUCLE PHP ARTICLES WP-->
-
-<div class="container-fluid fonctionnaliteesbkn">
-
+<!--FIN_TEST_BOUCLE_ARTICLES-->
+<!--LOOP-TITRE-->
 <?php
-      $params = array('pagename' => 'fonctionnalitees');
-      $the_query = new WP_Query($params);
-      if ( $the_query->have_posts() ) :
-        while ( $the_query->have_posts() ) :
+	    $params = array('pagename' => 'fonctionnalitees');
+	    $the_query = new WP_Query($params);
+	    if ( $the_query->have_posts() ) :
+		    while ( $the_query->have_posts() ) :
           $the_query->the_post(); ?>
-<section class="w-100 min-vh-100" id="sectionfunctions">
-
-  <div class="goute">
+          
+          <div class="goute">
         <img class="sizeicon" src="<?= get_template_directory_uri () ?>/images/Fonction.svg">
       <p class="titresection text-center"><?php the_title()?></p>
-  </div>
+    </div>
 
-  <div class="container paddingfonctio">
-     <div class="row">
+<?php
+		    endwhile;
+      endif; ?>
+<!--FIN-LOOP-TITRE-->
+<!--LOOP-COEUR-->
+<?php
+	    $params = array('pagename' => 'coeur');
+	    $the_query = new WP_Query($params);
+	    if ( $the_query->have_posts() ) :
+		    while ( $the_query->have_posts() ) :
+          $the_query->the_post(); ?>
+          
+<div class="container paddingfonctio">
+  <div class="row">
+    <div class="col-md-6">
+      <p class="soustitre text-center"><?php the_title()?></p>
 
-     <!-- Loop -->
-      <div class="col-md-6">
-       <p class="soustitre text-center">Coeur</p>
-
-       <img class="icon rounded mx-auto d-block" src="<?= get_template_directory_uri () ?>/images/coeur.svg">
+      <img class="icon rounded mx-auto d-block" src="<?= get_template_directory_uri () ?>/images/coeur.svg">
        
-       <p class="txt text-center">Votre rythme cardiaque est constamment enrgistré dans l’application pour que vous puissiez consulter le comportement de votre coeur au fil de la journée. </p>
-      </div>
-      <!-- endloop --> 
-      <div class="col-md-6">
-       <p class="soustitre text-center">Conseils nutritions</p>
+      <p class="txt text-center"><?php the_content() ?></p>
+    </div>
+
+<?php
+		    endwhile;
+      endif; ?>
+<!--FIN-LOOP-COEUR-->
+<!--LOOP-CONSEILS_NUTRITION-->
+<?php
+	    $params = array('pagename' => 'conseils-nutritions-zizi');
+	    $the_query = new WP_Query($params);
+	    if ( $the_query->have_posts() ) :
+		    while ( $the_query->have_posts() ) :
+          $the_query->the_post(); ?>
+          
+          <div class="col-md-6">
+       <p class="soustitre text-center"><?php the_title()?></p>
       
        <img class="icon rounded mx-auto d-block" src="<?= get_template_directory_uri () ?>/images/nutri.svg">
       
-       <p class="txt text-center">Grâce à votre puce RFID, Hackio vous informe sur vos carences et vous donne des conseils personnalisés pour y remédier</p>
-      </div>
-
-      <div class="col-md-6">
-       <p class="soustitre text-center">Cycle menstruel</p>
-      
-       <img class="icon rounded mx-auto d-block" src="<?= get_template_directory_uri () ?>/images/calendrier.svg">
-     
-       <p class="txt text-center">Le suivi de votre cycle menstruel peut vous aider à avoir une meilleure compréhension de votre santé globale </p>
-      </div>
-      <div class="col-md-6">
-        <p class="soustitre text-center">Sommeil</p>
-     
-        <img class="icon rounded mx-auto d-block" src="<?= get_template_directory_uri () ?>/images/sommeil.svg">
-     
-        <p class="txt text-center">Votre application enregistre vos cycles de sommeils et vous conseille l’heure adéquate pour bénéficier d’un sommeil optimal</p>
+       <p class="txt text-center"><?php the_content() ?></p>
       </div>
     </div>
   </div>
 
-</div>
-
-</section>
+<?php
+		    endwhile;
+      endif; ?>
+<!--FIN-LOOP-CONSEILS_NUTRITION-->
+<!--LOOP-CYCLES_MENSTRUEL-->
+<?php
+	    $params = array('pagename' => 'cycle-menstruel-zizi');
+	    $the_query = new WP_Query($params);
+	    if ( $the_query->have_posts() ) :
+		    while ( $the_query->have_posts() ) :
+          $the_query->the_post(); ?>
+          
+          <div class="container paddingfonctio">
+    <div class="row">
+      <div class="col-md-6">
+       <p class="soustitre text-center"><?php the_title()?></p>
+      
+       <img class="icon rounded mx-auto d-block" src="<?= get_template_directory_uri () ?>/images/calendrier.svg">
+     
+       <p class="txt text-center"><?php the_content() ?></p>
+      </div>
 
 <?php
-    endwhile;
-  endif; ?>
+		    endwhile;
+      endif; ?>
+<!--FIN-LOOP-CYCLES_MENSTRUEL-->
+<!--LOOP-SOMMEIL-->
+<?php
+	    $params = array('pagename' => 'sommeil');
+	    $the_query = new WP_Query($params);
+	    if ( $the_query->have_posts() ) :
+		    while ( $the_query->have_posts() ) :
+          $the_query->the_post(); ?>
+          
+          <div class="col-md-6">
+        <p class="soustitre text-center"><?php the_title()?></p>
+     
+        <img class="icon rounded mx-auto d-block" src="<?= get_template_directory_uri () ?>/images/sommeil.svg">
+     
+        <p class="txt text-center"><?php the_content() ?></p>
+        </div>
+    </div>
+  </div>
 
+<?php
+		    endwhile;
+      endif; ?>
+<!--FIN-LOOP-SOMMEIL-->
+</div>
+</section>
 <!---------------------------------------------------------------FAQ----------------------------------------------------------------->
 <!--TEST FAQ-->
 <?php
@@ -362,8 +392,6 @@
         endif;
         ?>
 <!--FIN TEST FAQ-->
-
-
 <section class="w-100 min-vh-100" id="sectionfaq">
 <div class="container-fluid paddingfaq">
 
@@ -452,7 +480,6 @@
 </div>
 
 </section>
-
 
 <!------------------------------------------------------------------Équipe------------------------------------------------------------------>
 <section class="w-100 min-vh-100" id="sectionequipe">
