@@ -10,9 +10,6 @@ function paf_setup () {
 
 add_action('after_setup_theme', 'paf_setup');
 
-?>
-
-<?php
 
 function xmas_theme_setup() {
 
@@ -21,8 +18,7 @@ function xmas_theme_setup() {
     
 
     register_nav_menus(array(
-        'main'=>'Menu principal du xmas',
-        'top'=>'menu sommital'
+        'primary'=> __( 'primary Menu', 'THEMENAME'),
 ));
 
 }
@@ -40,3 +36,9 @@ add_filter('nav_menu_link_attributes', 'add_link_class');
 
 
 add_action('after_setup_theme', 'xmas_theme_setup');
+
+
+// Register Custom Navigation Walker
+require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
+
+?>

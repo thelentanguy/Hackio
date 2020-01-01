@@ -26,37 +26,26 @@
 <body class="body">
 
 <!------------------------------------------------------------------NAV BAR------------------------------------------------------------------>
-    <nav class="navbar navbar-expand-lg navbar-light mynavbar-bg sticky-top">
+<nav class="navbar navbar-expand-lg navbar-light mynavbar-bg sticky-top">
       <img src="<?= get_template_directory_uri () ?>/images/Logogo.png" class="logo" alt="Responsive image">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active navelement">
-              <a class="nav-link" href="#sectionhome">Accueil </a>
-            </li>
-            <li class="nav-item navelement">
-              <a class="nav-link" href="#sectionprojet">Projet</a>
-            </li>
-            <li class="nav-item navelement">
-              <a class="nav-link" href="#sectionecrans">Écrans</a>
-            </li>
-            <li class="nav-item navelement">
-              <a class="nav-link" href="#sectionfunctions">Fonctionnalitées </a>
-            </li>
-            <li class="nav-item navelement">
-              <a class="nav-link" href="#sectionfaq">FAQ</a>
-            </li>
-            <li class="nav-item navelement">
-             <a class="nav-link" href="#sectionequipe">Équipe</a>
-            </li>
-          </ul>
-          <button class="btn  btncolor:hover btncolor" href="#sectionecrans">Télécharger</button>
-        </div>
-    </nav>
+<?php
+wp_nav_menu( array(
+  'theme_location'  => 'primary',
+  'depth'	          => 2, // 1 = no dropdowns, 2 = with dropdowns.
+  'container'       => 'div',
+  'container_class' => 'collapse navbar-collapse',
+  'container_id'    => 'navbarSupportedContent',
+  'menu_class'      => 'navbar navbar-expand-lg navbar-light mynavbar-bg sticky-top',
+  'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+  'walker'          => new WP_Bootstrap_Navwalker(),
+) );
+?>
 
+</nav>
 <!------------------------------------------------------------------HOME------------------------------------------------------------------>
 <!--LOOP-PHRASE_D'ACROCHE-->
 <?php
@@ -185,8 +174,8 @@
         <p class="txt"><?php the_content() ?> </p>
 
       <div class="btndonlowd">
-        <img class="sizedonlowdbtn" src="<?= get_template_directory_uri () ?>/images/AppStore-FR.png">
-        <img class="sizedonlowdbtn" src="<?= get_template_directory_uri () ?>/images/GooglePlay-FR.png">
+        <a href="https://www.apple.com/befr/ios/app-store/"><img class="sizedonlowdbtn" src="<?= get_template_directory_uri () ?>/images/AppStore-FR.png"></a>
+        <a href="https://store.google.com/be/?hl=nl-BE&regionRedirect=true&gclid=CjwKCAiAo7HwBRBKEiwAvC_Q8YvDUXiYlTu-8Tv5aE-_iFY-8rzfaud3CPntfXInHYTffx03jt7yMRoCAI0QAvD_BwE&gclsrc=aw.ds"><img class="sizedonlowdbtn" src="<?= get_template_directory_uri () ?>/images/GooglePlay-FR.png"></a>
       </div>
     </div>
   </div>
@@ -195,58 +184,30 @@
 <!------------------------------------------------------------------FONCTIONNALITES-------------------------------------------------------------->
 <section class="w-100 min-vh-100" id="sectionfunctions">
 <div class="container-fluid fonctionnaliteesbkn">
-<!--TEST_BOUCLE_ARTICLES-->
-<main role="main">
+<!-- boucles logane test--> 
+<?php
+        $params = array('category_name' => 'Fonctionnalitées');
+        $the_query = new WP_Query($params);
 
-	<section class="py-5 bg-light">
-		<div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-			<h1 class="display-4">
-				<?php
-				// On affiche le titre de la catégorie.
-				// Docs: https://developer.wordpress.org/reference/functions/single_cat_title/
-				echo single_cat_title() ?>
-			</h1>
-      <h3>(category.php : template générique listant TOUS les articles liés à une catégorie donnée)</h3>
-		</div>
-		<div class="container">
-			<div class="row">
+        if ( $the_query->have_posts() ) :
+        while ( $the_query->have_posts() ) :
+        $the_query->the_post(); ?>
+          <div class="row">
+          <a href="<?php the_permalink(); ?>">
+            <?php if(get_the_post_thumbnail_url()) { ?>
+              <img src="<?php the_post_thumbnail_url(); ?>" alt="Icone" class="icon-produits">
+            <?php } else { ?>
+              <img src="images/lumiere.png" alt="Icone" class="icon-produits">
+            <?php } ?>
+          </a>        <div class="text-produits col-lg-10"> <?php the_content() ; ?> </div>
+      </div>
 
-				<?php
-				if( have_posts() ):
-					while( have_posts() ):
-						the_post();
-						?>
-						<div class="col-md-4">
-							<div class="card mb-4 shadow-sm">
-								<?php
-								// Si l'article à une image "mise en avant", on l'affiche.
-								if(get_the_post_thumbnail_url()): ?>
-									<a href="<?php the_permalink(); ?>">
-										<img class="card-img-top" src="<?php the_post_thumbnail_url() ?>" alt="Card image cap">
-									</a>
-								<?php endif; ?>
-								<div class="card-body">
-									<p class="card-text">
-										<a href="<?php the_permalink() ; ?>">
-											<?php the_title() ; ?>
-										</a>
-									</p>
-									<p class="card-text">
-										<?php the_excerpt() ; ?>
-									</p>
-								</div>
-							</div>
-						</div>
-					<?php
-					endwhile;
-				endif;
-				?>
-			</div>
-		</div>
-	</section>
+      <?php
+        endwhile;
+        endif;
+        ?>
+<!-- boucles logane test--> 
 
-</main>
-<!--FIN_TEST_BOUCLE_ARTICLES-->
 <!--LOOP-TITRE-->
 <?php
 	    $params = array('pagename' => 'fonctionnalitees');
@@ -355,9 +316,32 @@
 </div>
 </section>
 <!---------------------------------------------------------------FAQ----------------------------------------------------------------->
-<!--TEST FAQ-->
+<section class="w-100 min-vh-100" id="sectionfaq">
+<div class="container-fluid paddingfaq">
+
+<!--LOOP-TITRE-->
 <?php
-        // On récupère TOUS les "articles" ayant "faq" comme catégorie
+	    $params = array('pagename' => 'faq');
+	    $the_query = new WP_Query($params);
+	    if ( $the_query->have_posts() ) :
+		    while ( $the_query->have_posts() ) :
+          $the_query->the_post(); ?>
+          
+          <div class="goute">
+        <img class="sizeicon" src="<?= get_template_directory_uri () ?>/images/faq.svg">
+      <p class="titresection text-center"><?php the_title()?></p>
+    </div>
+
+<?php
+		    endwhile;
+      endif; ?>
+<!--FIN-LOOP-TITRE-->
+
+  <div class="row">
+    <div class="col-md-6 paddingfaq2">
+      <div class="accordion" id="accordionExample">
+
+      <?php
         $params = array('category_name' => 'faq');
         $the_query = new WP_Query($params);
 
@@ -365,122 +349,31 @@
         while ( $the_query->have_posts() ) :
         $the_query->the_post(); ?>
 
-<section>
-<div>
-<div class="row">
-    <div class="col-md-6 paddingfaq2">
-      <div class="accordion" id="accordionExample">
-
       <div class="card faqsections border-light">
-        <div class="card-header" id="headingOne">
-            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        <div class="card-header" id="headingOne<?php echo $the_query->current_post ?>">
+            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne<?php echo $the_query->current_post ?>" aria-expanded="true" aria-controls="collapseOne">
               <h1 class="titrefaq"><?php the_title() ; ?></h1>
             </button>
         </div>
-        <div id="collapseOne" class="collapse show faqsousections" aria-labelledby="headingOne" data-parent="#accordionExample">
+        <div id="collapseOne<?php echo $the_query->current_post ?>" class="collapse show faqsousections" aria-labelledby="headingOne" data-parent="#accordionExample">
           <div class="card-body">
             <h1 class="txt"><?php the_content() ; ?></h1>
           </div>
         </div>
       </div>
 
-</div>
-</section>
-
 <?php
         endwhile;
         endif;
         ?>
-<!--FIN TEST FAQ-->
-<section class="w-100 min-vh-100" id="sectionfaq">
-<div class="container-fluid paddingfaq">
-
-    <div class="goute">
-        <img class="sizeicon" src="<?= get_template_directory_uri () ?>/images/faq.svg">
-      <p class="titresection text-center">FAQ</p>
-    </div>
-
-  <div class="row">
-    <div class="col-md-6 paddingfaq2">
-      <div class="accordion" id="accordionExample">
-
-      <div class="card faqsections border-light">
-        <div class="card-header" id="headingOne">
-            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-              <h1 class="titrefaq">Problème d’appairage</h1>
-            </button>
-        </div>
-        <div id="collapseOne" class="collapse show faqsousections" aria-labelledby="headingOne" data-parent="#accordionExample">
-          <div class="card-body">
-            <h1 class="txt">Si vous rencontrez un problème d’apparaige entre votre puce RFID et l’application, essayez premièrement de redémarrer votre puce RFID en appuyant 3 fois sur votre paume, deuxièmement rétablir la connexion entre l’application entre votre appareil et votre puce RFID. </h1>
-          </div>
-        </div>
-      </div>
-
-      <div class="card faqsections border-light">
-        <div class="card-header" id="headingTwo">
-            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"> 
-              <h1 class="titrefaq">Mauvais résulats</h1>
-            </button>
-       </div>
-        <div id="collapseTwo" class="collapse faqsousections" aria-labelledby="headingTwo" data-parent="#accordionExample">
-          <div class="card-body">
-            <h1 class="txt">Si vous pensez que les résultats obtenu sur l'application sont mauvais, essayer de refaire le test en ne décollant pas votre appareil de la puce jusqu'à ce que l'écran se remplisse et que le chargement s'éffectue.</h1>
-          </div>
-        </div>
-      </div>
-
-      <div class="card faqsections border-light">
-        <div class="card-header" id="headingThree">
-            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-              <h1 class="titrefaq">Erreur de RDV avec mon médecin</h1>
-            </button>
-        </div>
-        <div id="collapseThree" class="collapse faqsousections" aria-labelledby="headingThree" data-parent="#accordionExample">
-          <div class="card-body">
-            <h1 class="txt">Si une erreur se produit lors de la prise de rendez-vous avec votre médecin, cela est peut-être dû au fait que le rdv que vous souhaitez est déjà pris dans ce cas précis c'est à votre docteur de mettre à jour son agenda en ligne, vous pouvez toujours prendre contact avec lui par téléphone pour essayer de fixer un rendez-vous.</h1>
-          </div>
-        </div>
-      </div>
-
-      <div class="card faqsections border-light">
-        <div class="card-header" id="headingFour">
-            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-              <h1 class="titrefaq">Bilan de santé plus disponible</h1>
-            </button>
-        </div>
-        <div id="collapseFour" class="collapse faqsousections" aria-labelledby="headingFour" data-parent="#accordionExample">
-          <div class="card-body">
-            <h1 class="txt">Si vous vous rendez compte qu'un bilan de santé effectué n'est plus disponible, c'est surement parce que votre médecin effectue un check-up de ce bilan dans ce cas essayer de prendre contact avec lui pour avoir plus d'informations.</h1>
-          </div>
-        </div>
-      </div>
-
-      <div class="card faqsections border-light">
-        <div class="card-header" id="headingFive">
-            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-              <h1 class="titrefaq">Erreur lors du chek-up matinale </h1>
-            </button>
-        </div>
-        <div id="collapseFive" class="collapse faqsousections" aria-labelledby="headingThree" data-parent="#accordionExample">
-          <div class="card-body">
-            <h1 class="txt">l'algorithme d'Hackio peut estimer que votre système interne n'est pas à 100% encore réveillé afin d'éviter de fausser les résultats il est conseiller de réessayer le check-up dans 30 minutes.</h1>
-          </div>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-
-    <div class="col-md-6 paddingfaq">
-      <img class="img-fluid" src="<?= get_template_directory_uri () ?>/images/photo_faq.jpg" alt="Responsive image">
-    </div>
-
   </div>
 </div>
 
-</section>
+<div class="col-md-6 paddingfaq">
+  <img class="img-fluid" src="<?= get_template_directory_uri () ?>/images/photo_faq.jpg" alt="Responsive image">
+</div>
 
+</section>
 <!------------------------------------------------------------------Équipe------------------------------------------------------------------>
 <section class="w-100 min-vh-100" id="sectionequipe">
 
@@ -542,17 +435,17 @@
       <div class="col-md-4 footer_column flexml">
           <ul class="flexicon list-unstyled">
             <li>
-              <img class="icon rounded mx-auto d-block" src="<?= get_template_directory_uri () ?>/images/face.svg">
+              <a href="https://www.facebook.com"><img class="icon rounded mx-auto d-block" src="<?= get_template_directory_uri () ?>/images/face.svg"></a>
             </li>
             <li>
-              <img class="icon rounded mx-auto d-block" src="<?= get_template_directory_uri () ?>/images/twitter.svg">
+              <a href="https://twitter.com"><img class="icon rounded mx-auto d-block" src="<?= get_template_directory_uri () ?>/images/twitter.svg"></a>
             </li>
             <li>
-              <img class="icon rounded mx-auto d-block" src="<?= get_template_directory_uri () ?>/images/lebonDuFinaldeInsta.svg">
+              <a href="https://www.instagram.com"><img class="icon rounded mx-auto d-block" src="<?= get_template_directory_uri () ?>/images/lebonDuFinaldeInsta.svg"></a>
             </li>
           </ul>
           <br>
-            <a class="txt text-center" href="mentionslegales.html"> Mentions Légales </a>
+            <a class="txt text-center" href="mentionslegales.html"> © Hackio 2019 Mentions Légales </a>
       </div>
 
       <div class="col-md-4 footer_column paddingfooter">
@@ -562,11 +455,9 @@
             <img class="icon rounded mx-auto d-block sizeicones" src="<?= get_template_directory_uri () ?>/images/tel.svg">
         </div>
         <div>
-          <p class="txt">Av. De Mai 218</p>
-          <p class="txt">1200 Bruxelles , Belgique</p>
-          <p class="txt">contact@hackio.be</p>
-          <p class="txt">+32 91 36 42 91</p>
-          <p class="txt">© Hackio 2019</p>
+          <p> <a class="txt" href="https://www.google.be/maps/place/Rue+de+la+Poste+111,+1030+Schaerbeek/@50.8594627,4.3655469,17z/data=!3m1!4b1!4m5!3m4!1s0x47c3c370c43d6195:0x6204b8bdc7bfce3!8m2!3d50.8594593!4d4.3677356?hl=fr">Av. De Mai 218 <br> 1200 Bruxelles , Belgique </a> </p>
+          <p> <a class="txt" href="mailto:contact@hackio.be">contact@hackio.be</a> </p>
+          <p> <a class="txt" href="tel:+32 91 36 42 91">+32 91 36 42 91</a> </p>
         </div>
       </div>
 
@@ -574,14 +465,13 @@
   </div>
 </footer>
 
-
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-<script type="text/javascript" src="<?= get_template_directory_uri () ?>//code.jquery.com/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="<?= get_template_directory_uri () ?>//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<script type="text/javascript" src="<?= get_template_directory_uri () ?>slick/slick.min.js"></script>
-<script src="<?= get_template_directory_uri () ?>caroussel.js"></script>
+<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/slick/slick.min.js"></script>
+<script src="<?php bloginfo('template_directory'); ?>/caroussel.js"></script>
 <?php wp_footer(); ?>
 </body>
 </html>
