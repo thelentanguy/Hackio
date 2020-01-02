@@ -10,7 +10,7 @@
 -->
 <html lang="fr">
 <head>
-   <!-- <meta charset="UTF-8"> -->
+    <meta charset="UTF-8">
     <meta charset="<?php bloginfo( 'UTF-8' ); ?>" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -355,7 +355,7 @@ wp_nav_menu( array(
               <h1 class="titrefaq"><?php the_title() ; ?></h1>
             </button>
         </div>
-        <div id="collapseOne<?php echo $the_query->current_post ?>" class="collapse show faqsousections" aria-labelledby="headingOne" data-parent="#accordionExample">
+        <div id="collapseOne<?php echo $the_query->current_post ?>" class="collapse faqsousections" aria-labelledby="headingOne" data-parent="#accordionExample">
           <div class="card-body">
             <h1 class="txt"><?php the_content() ; ?></h1>
           </div>
@@ -455,7 +455,7 @@ wp_nav_menu( array(
             <img class="icon rounded mx-auto d-block sizeicones" src="<?= get_template_directory_uri () ?>/images/tel.svg">
         </div>
         <div>
-          <p> <a class="txt" href="https://www.google.be/maps/place/Rue+de+la+Poste+111,+1030+Schaerbeek/@50.8594627,4.3655469,17z/data=!3m1!4b1!4m5!3m4!1s0x47c3c370c43d6195:0x6204b8bdc7bfce3!8m2!3d50.8594593!4d4.3677356?hl=fr">Av. De Mai 218 <br> 1200 Bruxelles , Belgique </a> </p>
+          <p> <a class="txt" href="https://www.google.be/maps/place/Rue+de+la+Poste+111,+1030+Schaerbeek/@50.8594627,4.3655469,17z/data=!3m1!4b1!4m5!3m4!1s0x47c3c370c43d6195:0x6204b8bdc7bfce3!8m2!3d50.8594593!4d4.3677356?hl=fr">Av. De Mai 218 <br> 1200 Bruxelles , Belgique</a> </p>
           <p> <a class="txt" href="mailto:contact@hackio.be">contact@hackio.be</a> </p>
           <p> <a class="txt" href="tel:+32 91 36 42 91">+32 91 36 42 91</a> </p>
         </div>
@@ -468,9 +468,9 @@ wp_nav_menu( array(
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>//code.jquery.com/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/slick/slick.min.js"></script>
+<script type="text/javascript" src="<?php bloginfo('template_directory');?>//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="<?php bloginfo('template_directory');?>//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="<?php bloginfo('template_directory');?>/slick/slick.min.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/caroussel.js"></script>
 <?php wp_footer(); ?>
 </body>

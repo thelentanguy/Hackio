@@ -2,6 +2,7 @@
 html{
     scroll-behavior: smooth;
 }
+
 .imgresponsive {
     object-fit: cover;
     width: 100%;
