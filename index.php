@@ -10,7 +10,6 @@
 -->
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
     <meta charset="<?php bloginfo( 'UTF-8' ); ?>" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -216,7 +215,8 @@ wp_nav_menu( array(
             <?php } else { ?>
               <img src="images/lumiere.png" alt="Icone" class="icon-produits">
             <?php } ?>
-          </a>        <div class="text-produits col-lg-10"> <?php the_content() ; ?> </div>
+          </a>        
+          <div class="text-produits col-lg-10"> <?php the_content() ; ?> </div>
       </div>
 
       <?php
@@ -374,7 +374,7 @@ wp_nav_menu( array(
         </div>
         <div id="collapseOne<?php echo $the_query->current_post ?>" class="collapse faqsousections" aria-labelledby="headingOne" data-parent="#accordionExample">
           <div class="card-body">
-            <h1 class="txt"><?php the_content() ; ?></h1>
+            <h1 class="txt"><?php the_content();?></h1>
           </div>
         </div>
       </div>
@@ -393,18 +393,36 @@ wp_nav_menu( array(
 </section>
 <!------------------------------------------------------------------Équipe------------------------------------------------------------------>
 <section class="w-100 min-vh-100" id="sectionequipe">
-
 <div class="container-fluid equipebkn paddingequipe">
+<!--LOOP-TITRE-->
+<?php
+	    $params = array('pagename' => 'equipe');
+	    $the_query = new WP_Query($params);
+	    if ( $the_query->have_posts() ) :
+		    while ( $the_query->have_posts() ) :
+          $the_query->the_post(); ?>
 
     <div class="goute">
         <img class="sizeicon" src="<?= get_template_directory_uri () ?>/images/equipo.svg">
-      <p class="titresection text-center">Équipe</p>
+      <p class="titresection text-center"><?php the_title()?></p>
     </div>
 
-  <div class="container-fluid">
+    <?php
+		    endwhile;
+      endif; ?>
+<!--FIN-LOOP-TITRE-->
+<!--LOOP-NICO-->
+<?php
+	    $params = array('pagename' => 'nicolas');
+	    $the_query = new WP_Query($params);
+	    if ( $the_query->have_posts() ) :
+		    while ( $the_query->have_posts() ) :
+          $the_query->the_post(); ?>
+          
+          <div class="container-fluid">
     <div class="row">
       <div class="col-md">
-        <p class="soustitre marginnico">Nicolas</p>
+        <p class="soustitre marginnico"><?php the_title()?></p>
         <img class="imgequipe mx-auto d-block" src="<?= get_template_directory_uri () ?>/images/nicolo.png">
       </div>
 
@@ -413,17 +431,29 @@ wp_nav_menu( array(
       </div>
 
       <div class="col-md">
-        <h1 class="txt text-center paddingtxtequipe">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.</h1>
+        <h1 class="txt text-center paddingtxtequipe"><?php the_content();?></h1>
       </div>
     </div> 
   </div>
 </div>
 
-<div class="container-fluid equipebkn paddingequipe">
+<?php
+		    endwhile;
+      endif; ?>
+<!--FIN-LOOP-NIC0-->
+<!--LOOP-TANGUY-->
+<?php
+	    $params = array('pagename' => 'tanguy-zizi');
+	    $the_query = new WP_Query($params);
+	    if ( $the_query->have_posts() ) :
+		    while ( $the_query->have_posts() ) :
+          $the_query->the_post(); ?>
+          
+          <div class="container-fluid equipebkn paddingequipe">
     <div class="container-fluid">
       <div class="row">
         <div class="col-md order-3 order-md-1">
-          <h1 class="txt text-center paddingtxtequipe">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.</h1>
+          <h1 class="txt text-center paddingtxtequipe"><?php the_content();?></h1>
         </div>
 
         <div class="col-md paddingphotoequipe order-2">
@@ -431,13 +461,17 @@ wp_nav_menu( array(
         </div>
   
         <div class="col-md order-1 order-md-3">
-            <p class="soustitre margintang">Tanguy</p>
+            <p class="soustitre margintang"><?php the_title()?></p>
             <img  class="imgequipe mx-auto d-block" src="<?= get_template_directory_uri () ?>/images/tanguyte.png">
         </div>
       </div> 
     </div>
-  </div>
 
+<?php
+		    endwhile;
+      endif; ?>
+<!--FIN-LOOP-TANGUY-->
+</div>
 </section>
 
 <!------------------------------------------------------------------Footer------------------------------------------------------------------>
