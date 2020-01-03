@@ -67,6 +67,23 @@ wp_nav_menu( array(
 		    endwhile;
 	    endif; ?>
 <!--FIN-LOOP-PHRASE_D'ACROCHE-->
+<?php
+      $params = array('pagename' => '//TON SLUG//');
+      $the_query = new WP_Query($params);
+      if ( $the_query->have_posts() ) :
+        while ( $the_query->have_posts() ) :
+          $the_query->the_post(); ?>
+  
+  <div class="//TA CLASSE">
+    <div class="//TA CLASSE//">
+      <p class="//TA CLASSE//"><?php the_title()?></p>
+      <br>
+      <p class="//TA CLASSE//"><?php the_content() ?> </p>
+    </div>
+
+<?php
+    endwhile;
+  endif; ?>
 <!------------------------------------------------------------------PRESENTATION----------------------------------------------------------------->
 <section class="min-vh-100 d-flex align-items-center px-5" id="sectionprojet">
 <!--LOOP-TITRE_PROJET-->
