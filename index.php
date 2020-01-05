@@ -34,7 +34,7 @@
 <?php
 wp_nav_menu( array(
   'theme_location'  => 'primary',
-  'depth'	          => 2, // 1 = no dropdowns, 2 = with dropdowns.
+  'depth'	          => 2,
   'container'       => 'div',
   'container_class' => 'collapse navbar-collapse',
   'container_id'    => 'navbarSupportedContent',
@@ -43,7 +43,7 @@ wp_nav_menu( array(
   'walker'          => new WP_Bootstrap_Navwalker(),
 ) );
 ?>
-
+<button class="btn btncolor:hover btncolor" href="#sectionecrans">Télécharger</button>
 </nav>
 <!------------------------------------------------------------------HOME------------------------------------------------------------------>
 <!--LOOP-PHRASE_D'ACROCHE-->
@@ -66,23 +66,6 @@ wp_nav_menu( array(
 		    endwhile;
 	    endif; ?>
 <!--FIN-LOOP-PHRASE_D'ACROCHE-->
-<?php
-      $params = array('pagename' => '//TON SLUG//');
-      $the_query = new WP_Query($params);
-      if ( $the_query->have_posts() ) :
-        while ( $the_query->have_posts() ) :
-          $the_query->the_post(); ?>
-  
-  <div class="//TA CLASSE">
-    <div class="//TA CLASSE//">
-      <p class="//TA CLASSE//"><?php the_title()?></p>
-      <br>
-      <p class="//TA CLASSE//"><?php the_content() ?> </p>
-    </div>
-
-<?php
-    endwhile;
-  endif; ?>
 <!------------------------------------------------------------------PRESENTATION----------------------------------------------------------------->
 <section class="min-vh-100 d-flex align-items-center px-5" id="sectionprojet">
 <!--LOOP-TITRE_PROJET-->
@@ -202,7 +185,7 @@ wp_nav_menu( array(
 <div class="container-fluid fonctionnaliteesbkn">
 <!-- boucles logane test--> 
 <?php
-        $params = array('category_name' => 'Fonctionnalitées');
+        $params = array('category_name' => 'fonctionnalitees');
         $the_query = new WP_Query($params);
 
         if ( $the_query->have_posts() ) :
@@ -496,7 +479,7 @@ wp_nav_menu( array(
             </li>
           </ul>
           <br>
-            <a class="txt text-center" href="mentionslegales.html"> © Hackio 2019 Mentions Légales </a>
+            <a class="txt text-center"  href="mentionslegales.html"> © Hackio 2019 Mentions Légales </a>
       </div>
 
       <div class="col-md-4 footer_column paddingfooter">
