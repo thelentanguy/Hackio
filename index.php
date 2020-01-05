@@ -174,7 +174,7 @@ wp_nav_menu( array(
 
       <div class="btndonlowd">
         <a href="https://www.apple.com/befr/ios/app-store/"><img class="sizedonlowdbtn" src="<?= get_template_directory_uri () ?>/images/AppStore-FR.png"></a>
-        <a href="https://store.google.com/be/?hl=nl-BE&regionRedirect=true&gclid=CjwKCAiAo7HwBRBKEiwAvC_Q8YvDUXiYlTu-8Tv5aE-_iFY-8rzfaud3CPntfXInHYTffx03jt7yMRoCAI0QAvD_BwE&gclsrc=aw.ds"><img class="sizedonlowdbtn" src="<?= get_template_directory_uri () ?>/images/GooglePlay-FR.png"></a>
+        <a href="https://play.google.com/store/search?q=topla&gl=BE"><img class="sizedonlowdbtn" src="<?= get_template_directory_uri () ?>/images/GooglePlay-FR.png"></a>
       </div>
     </div>
   </div>
