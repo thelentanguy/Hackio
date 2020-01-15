@@ -20,6 +20,7 @@
     <link rel="stylesheet" type="text/css" href="<?= get_template_directory_uri () ?>/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="<?= get_template_directory_uri () ?>/slick/slick-theme.css"/>
     <title>Hackio</title>
+    <link rel="icon" type="image/png" href="<?= get_template_directory_uri () ?>/images/favicon.png">
     <?php wp_head(); ?>
 </head>
 <body class="body">
@@ -30,8 +31,7 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-
-<?php
+<?php 
 wp_nav_menu( array(
   'theme_location'  => 'primary',
   'depth'	          => 2,
@@ -43,7 +43,12 @@ wp_nav_menu( array(
   'walker'          => new WP_Bootstrap_Navwalker(),
 ) );
 ?>
-<button class="btn btncolor:hover btncolor" href="#sectionecrans">Télécharger</button>
+
+<button class="btn btncolor:hover btncolor"> 
+  <a href="#sectionecrans">
+    <h1 class="txt-btn"> Télécharger </h1>
+  </a>
+</button>
 </nav>
 <!------------------------------------------------------------------HOME------------------------------------------------------------------>
 <!--LOOP-PHRASE_D'ACROCHE-->
@@ -178,37 +183,12 @@ wp_nav_menu( array(
       </div>
     </div>
   </div>
-
 </section>
 <!------------------------------------------------------------------FONCTIONNALITES-------------------------------------------------------------->
 <section class="w-100 min-vh-100" id="sectionfunctions">
 <div class="container-fluid fonctionnaliteesbkn">
-<!-- boucles logane test--> 
-<?php
-        $params = array('category_name' => 'fonctionnalitees');
-        $the_query = new WP_Query($params);
-
-        if ( $the_query->have_posts() ) :
-        while ( $the_query->have_posts() ) :
-        $the_query->the_post(); ?>
-          <div class="row">
-          <a href="<?php the_permalink(); ?>">
-            <?php if(get_the_post_thumbnail_url()) { ?>
-              <img src="<?php the_post_thumbnail_url(); ?>" alt="Icone" class="icon-produits">
-            <?php } else { ?>
-              <img src="images/lumiere.png" alt="Icone" class="icon-produits">
-            <?php } ?>
-          </a>        
-          <div class="text-produits col-lg-10"> <?php the_content() ; ?> </div>
-      </div>
-
-      <?php
-        endwhile;
-        endif;
-        ?>
-<!-- boucles logane test--> 
-
 <!--LOOP-TITRE-->
+<div class="titrefct">
 <?php
 	    $params = array('pagename' => 'fonctionnalitees');
 	    $the_query = new WP_Query($params);
@@ -224,6 +204,7 @@ wp_nav_menu( array(
 <?php
 		    endwhile;
       endif; ?>
+</div>
 <!--FIN-LOOP-TITRE-->
 <!--LOOP-COEUR-->
 <?php
@@ -410,7 +391,7 @@ wp_nav_menu( array(
       </div>
 
       <div class="col-md-6 paddingphotoequipe">
-          <img class="imgequipe mr-auto d-block" src="<?= get_template_directory_uri () ?>/images/Quali1.1.svg">
+          <img class="imgequipe mr-auto d-block" src="<?= get_template_directory_uri () ?>/images/quali1.1.svg">
       </div>
 
       <div class="col-md">
@@ -469,19 +450,51 @@ wp_nav_menu( array(
       <div class="col-md-4 footer_column flexml">
           <ul class="flexicon list-unstyled">
             <li>
-              <a href="https://www.facebook.com"><img class="icon rounded mx-auto d-block" src="<?= get_template_directory_uri () ?>/images/face.svg"></a>
+              <a href="https://www.facebook.com/permalink.php?story_fbid=104213651111254&id=104209101111709"><img class="icon rounded mx-auto d-block" src="<?= get_template_directory_uri () ?>/images/face.svg"></a>
             </li>
             <li>
-              <a href="https://twitter.com"><img class="icon rounded mx-auto d-block" src="<?= get_template_directory_uri () ?>/images/twitter.svg"></a>
+              <a href="https://twitter.com/hacki_o/status/1214169884399149061?s=12&fbclid=IwAR295MKVY8Eip9WdHEein4a0JtstDcPq4eF5rxSGyun4b4g_8yvyFWrcPQ4"><img class="icon rounded mx-auto d-block" src="<?= get_template_directory_uri () ?>/images/twitter.svg"></a>
             </li>
             <li>
-              <a href="https://www.instagram.com"><img class="icon rounded mx-auto d-block" src="<?= get_template_directory_uri () ?>/images/lebonDuFinaldeInsta.svg"></a>
+              <a href="https://www.instagram.com/p/B6-pTidBtBI/?fbclid=IwAR3IKsyzzh0khrb-6_AbIiuCdOqO2RD233o3y8QH-iDIoB3ibz_LEsDRF6c"><img class="icon rounded mx-auto d-block" src="<?= get_template_directory_uri () ?>/images/lebonDuFinaldeInsta.svg"></a>
             </li>
           </ul>
           <br>
-            <a class="txt text-center"  href="mentionslegales.html"> © Hackio 2019 Mentions Légales </a>
-      </div>
+<!----------- MODAL_ML ------------>
+<!-- Button trigger modal -->
+<button type="button" class="btn" data-toggle="modal" data-target="#exampleModalScrollable">
+<a class="txt text-center"> © Hackio 2019 Mentions Légales </a>
+</button>
 
+<!-- Modal -->
+<div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+
+<?php 
+$params=array('pagename' => 'mentions-legales');
+  $the_query = new WP_Query($params);
+  $the_query->the_post();?>
+
+<div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title soustitre" id="exampleModalScrollableTitle">Mentions Légales</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+<?php the_content(); ?>
+      
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!----------------FIN MODAL_ML------------>
+
+</div>
       <div class="col-md-4 footer_column paddingfooter">
         <div>
             <img class="icon rounded mx-auto d-block sizeicones" src="<?= get_template_directory_uri () ?>/images/gps.svg">
@@ -491,7 +504,7 @@ wp_nav_menu( array(
         <div>
           <p> <a class="txt" href="https://www.google.be/maps/place/Rue+de+la+Poste+111,+1030+Schaerbeek/@50.8594627,4.3655469,17z/data=!3m1!4b1!4m5!3m4!1s0x47c3c370c43d6195:0x6204b8bdc7bfce3!8m2!3d50.8594593!4d4.3677356?hl=fr">Av. De Mai 218 <br> 1200 Bruxelles , Belgique</a> </p>
           <p> <a class="txt" href="mailto:contact@hackio.be">contact@hackio.be</a> </p>
-          <p> <a class="txt" href="tel:+32 91 36 42 91">+32 91 36 42 91</a> </p>
+          <p> <a class="txt" href="tel:+32 491 36 42 91">+32 491 36 42 91</a> </p>
         </div>
       </div>
 
